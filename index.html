@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /* 头部全局 */
+        .top_all{
+            background-color: #191d3a;
+        }
+
+        .top_one{
+            width: 1000px;
+            height: 58px;
+            margin: auto;
+        }
+
+        /* logo */
+        .logo{
+            margin-top: 12px;
+            margin-right: 48px;
+            float: left;
+        }
+
+        /* 选项栏 */
+        .list{
+            float: left;
+        }
+        .list li{
+            list-style:none;
+            float: left;
+            width: 86px;
+            height: 58px;
+            border-left:#252947 1px solid;
+            line-height: 58px;
+            text-align: center;
+        }
+        .list li:last-child{
+            border-right:rgb(104, 98, 125) 1px solid;
+        }
+        .list li a:hover{
+            background-color: rgb(37, 41, 71);
+            color: white;
+        }
+        .list li:first-child a{
+            background-color: rgb(37, 41, 71);
+            color: white;
+        }
+        .list li a{
+            display: block;
+        }
+        .align{
+            width: 98px;
+            height: 32px;
+            line-height: 32px;
+            background-color: rgb(56, 183, 116);
+            border-radius: 4px;
+            margin-left: 9px;
+            margin-top: 14px;
+            float: left;
+            text-align: center;
+        }
+        .align a{
+            color: white;
+            display: block;
+            border-radius: 4px;
+        }
+        .align a:hover,.align a:visited{
+            background-color: rgb(43, 163, 100);
+        }
+
+        /* 中英文 */
+        .ce{
+        float: right;
+        margin-top:18px;
+        }
+        .ce a:first-child{
+        color:rgb(41, 143, 94);
+        margin-right: 14px;
+        }
+        .ce a:hover{
+        color:rgb(41, 143, 94);
+        }
+
+        /* 头部的第二部分---轮播(未轮播)*/
+        /* 背景 */
+        .top_two{
+            height: 460px;
+            background: url(../images/banner.jpg) no-repeat center;
+        }
+        /* 零件框 */
+        .banner{
+            width: 1000px;
+            margin: auto;
+            position: relative;
+        }
+        /* 在线游戏分享选项 */
+        .online_one{
+            width: 115px;
+            height: 35px;
+            background: url(../images/online.png) no-repeat ;
+            line-height: 36px;
+            position: absolute;
+            right:0;
+            top:82px;
+        }
+        .online_one a{
+            margin-left: 18px;
+            color:black;
+            display: block;
+        }
+        .top_two_box:hover .online_one{
+            background: url(../images/online.png) no-repeat -118px 0px;
+        }
+        .top_two_box:hover .online_two{
+            display: block;
+        }
+        .online_two{
+            width: 115px;
+            height: 38px;
+            background-color: rgb(255, 255, 255);
+            border-bottom-right-radius:19px;
+            border-bottom-left-radius:19px;
+            position: absolute;
+            right: 1px;
+            top:118px;
+            display: none;
+        }
+        .online_two ul li a{
+            width: 25px;
+            height: 25px;
+            background: url(../images/online.png) 0px -46px no-repeat;
+            float: left;
+            margin-top: 3px;
+            margin-left: 12px;
+        }
+        .online_two ul li:nth-child(2) a{
+            background: url(../images/online.png) -50px -46px no-repeat;
+            margin-left: 8px;
+        }
+        .online_two ul li:last-child a{
+            background: url(../images/online.png) -100px -46px no-repeat;
+            margin-left: 8px;
+        }
+
+        /* 广告 */
+        .adv{
+            font-size: 14px;
+            position: absolute;
+            right: 42px;
+            top: 170px;
+        }
+
+        /* 游戏下载 */
+        .download{
+            position: absolute;
+            top:220px;
+            right: 440px;
+        }
+        .download div{
+            width: 22px;
+            height: 22px;
+            background: url(../images/download.png) no-repeat 0px 5px;
+            display: inline-block;
+        }
+        .download p{
+            width: 100px;
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: bolder;
+            display: inline-block;
+            position: absolute;
+        }
+        .download_add{
+            position: absolute;
+            right: 30px;
+            top:260px
+        }
+        .download_add ul li{
+            width: 82px;
+            height: 106px;
+            background-color: rgba(233, 242, 252,0.7);
+            float: left;
+            margin-left: 2px;
+            text-align: center;
+        }
+        .download_add ul li:first-child{
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+        }
+        .download_add ul li:last-child{
+            width: 106px;
+            height: 106px;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+        }
+        .download_add ul li div{
+            width: 80px;
+            height: 80px;
+            background: url(../images/pad.png) no-repeat 28px -173px;   
+        }
+        .download_add ul li:nth-child(2) div{
+            background: url(../images/pad.png) no-repeat 28px 25px;   
+        }
+        .download_add ul li:nth-child(3) div{
+            background: url(../images/pad.png) no-repeat 21px -74px;   
+        }
+        .download_add ul li:nth-child(4) div{
+            background: url(../images/pad.png) no-repeat 22px -473px;   
+        }
+        .download_add ul li:last-child div{
+            width: 80px;
+            height: 80px;
+            background: url(../images/ewm.png) no-repeat 0px 0px;   
+            margin-top: 13px;
+            margin-left: 13px;
+        }
+        .download_add ul li a{
+            display: block;
+        }
+        .download_add ul li:hover{
+            background-color: rgb(233, 242, 252);
+        }
+        .download_add ul li:last-child{
+            background-color: rgba(233, 242, 252,0.7);
+        }
+
+        /* 轮播圆点 */
+        .dot ul li{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(233, 242, 252,0.7);
+            float: left;
+            margin-left: 15px;
+        }
+        .dot ul li:hover{
+            background-color:white;
+        }
+        .dot{
+            position: absolute;
+            left:47%;
+            top:430px;
+        }
+        .dot ul li:first-child{
+            background-color:white;
+        }
+         /* 中部第一部分 */
+        /* 视频轮播图(未轮播) */
+        .mid_one{
+            width: 1000px;
+            margin: auto;
+            margin-top:50px;
+        }
+        /* transition渐变特效 */
+        .mid_one ul li{
+            height: 184px;
+            float: left;
+            margin-left: 42px;
+            text-align: center;
+            transition: background-color 0.5s linear 0s;
+        }
+        .mid_one ul li:first-child{
+            margin-left: 0px;
+        }
+        .mid_one ul li img{
+            width: 218px;
+            height: 130px;
+        }
+        .mid_one ul li a span{
+            color: rgba(96, 197, 144);
+        }
+        .mid_one ul li a{
+            font-size: 12px;
+            font-weight: bolder;
+        }
+
+        .mid_one ul li div{
+            width: 20px;
+            height: 20px;
+            background: url(../images/arrow.png) no-repeat 8px 11px;
+            display: inline-block;
+        }
+        .mid_one ul li:hover{
+            background-color: rgb(96, 197, 144);
+        }
+        .mid_one ul li:hover a{
+            color: white;
+        }
+        .mid_one ul li:hover a span{
+            color: white;
+        }
+        .mid_one ul li:hover div{
+            background: url(../images/arrow_hover.png) no-repeat 8px 11px;
+        }
+        /* 视频轮播小圆点 */
+        .mid_dot{
+            border-top:solid 1px rgb(181, 192, 203);
+            margin-top: 38px;
+        }
+        .mid_dot ul{
+            width: 52px;
+            height: 12px;
+            margin: -6px auto;
+            padding-left: 14px;
+            background-color: white;
+        }
+        .mid_dot ul li{
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgb(181, 192, 203);
+            margin-left:14px;
+        }
+        .mid_dot ul li:last-child{
+            margin-right:14px ;
+        }
+        .mid_dot ul li:first-child{
+            background-color: rgb(47, 188, 113);
+        }
+        .mid_dot ul li:hover{
+            background-color: rgb(47, 188, 113);
+        }
+
+        /* 公司新闻与招收人才 */
+        .mid_two{
+            margin-top:54px ;
+            height: 375px;
+            background: url(../images/indexmainbg.jpg) no-repeat center;
+        }
+        .mid_bottom{
+            width: 1000px;
+            margin: auto;
+        }
+        /* 公司新闻 */
+        .mid_bottom_left{
+            width: 500px;
+            height: 310px;
+            background: url(../images/bynewsbg.jpg) no-repeat ;
+            float: left;
+            position: relative;
+        }
+         /* 更多信息 */
+        .more_one{
+            width: 64px;
+            height: 24px;
+            border-radius: 4px;
+            border: solid 1px rgb(121, 209, 162);
+            text-align: center;
+            line-height: 24px;
+            position:absolute;
+            left: 220px;
+            top:42px;
+        }
+        .more_one span{
+            position:absolute;
+            left: 50px;
+            top:-5px;
+        }
+        .more_one a{
+            display: block;
+            font-size: 12px;
+            color: rgb(121, 209, 162);
+        }
+        .more_one a:hover{
+            background-color: rgb(51, 185, 114);
+            color:white;
+        }
+
+        .mid_list_one{
+            width: 462px;
+            margin-top: 120px;
+        }
+        .mid_list_one li{
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom:solid 1px rgb(175, 190, 207);
+            margin-left: 20px;
+        }
+        .mid_list_one span{
+            float: right;
+            color: rgb(175, 190, 207);
+        }
+        .mid_list_one a{
+            font-size: 12px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: black;
+        }
+        .mid_list_one a:hover{
+            color: rgb(51, 185, 114);
+        }
+
+
+        /* 招收人才 */
+        .mid_bottom_right{
+            width: 500px;
+            height: 310px;
+            background: url(../images/byshzpbg.jpg) no-repeat;
+            float: left;
+            color: white;
+            position: relative;
+        }
+        .mid_bottom_right p{
+            font-size: 12px;
+        }
+        .mid_bottom_right .jobs{
+            position:absolute;
+            left: 82px;
+            top:44px;
+        }
+                /* 更多信息按钮 */
+        .more_two{
+            width: 64px;
+            height: 24px;
+            border-radius: 4px;
+            border: solid 1px white;
+            text-align: center;
+            line-height: 24px;
+            position:absolute;
+            left: 200px;
+            top:45px;
+        }
+        .more_two span{
+            position:absolute;
+            left: 50px;
+            top:-5px;
+        }
+        .more_two a{
+            display: block;
+            font-size: 12px;
+            color: white;
+            margin-right: 14px;
+            margin-top: 2px;
+        }
+        .more_two a:hover{
+            background-color: white;
+            color:rgb(121, 209, 162);
+        }
+
+        .mid_list_two{
+            position:absolute;
+            top: 112px;
+            left: 18px;
+        }
+        .mid_list_two p{
+            font-size: 12px;
+            font-weight: bolder;
+        }
+        .mid_list_two li{
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgb(111, 222, 163);
+            width: 306px;
+        }
+        .mid_list_two a{
+            color: white;
+            font-size: 12px;
+        }
+        /* 上面方浮动不影响下方内容 */
+        .both{
+            clear: both;
+        }
+        /*  */
+        /* 底部 */
+        .bottom{
+            background-color: rgb(25, 29, 58);
+        }
+        /* 底部框 */
+        .bottom_all{
+            width: 1000px;
+            margin: auto;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        /* 网站地图,免责声明,监督举报 */
+        .bottom_list ul li{
+            float: left;
+            padding-right: 9px;
+            padding-left: 9px;
+            border-left:1px solid rgb(78, 82, 98) ;
+            color: rgb(78, 82, 98);
+            font-size: 12px;
+        }
+        .bottom_list ul li:first-child{
+            border: none;
+            padding-left: 0;
+        }
+        .bottom_list ul li a:hover{
+            color: white;
+        }
+        /* ICP 版权信息 */
+        .boyaa{
+            display: block;
+            color: rgb(78, 82, 98);
+            margin-top: 52px;
+            font-size: 12px;
+        }
+        .boyaa a{
+            font-size: 12px;
+        }
+        .boyaa a:hover{
+            color: white;
+        }
+
+        /* 经营许可 */
+        .permit{
+            height: 54px;
+            color: rgb(78, 82, 98);
+            margin-top: 26px;
+            font-size: 12px;
+            
+        }
+        .permit p{
+            display: inline-block;
+        }
+        .permit a{
+            display: inline-block;
+            line-height: 52px;
+        }
+        .permit img{
+            width: 44px;
+            height: 54px;
+            margin-left:20px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            vertical-align: bottom;
+        }
+        li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color:rgb(104, 98, 125);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_all">
+        <div class="top_one">
+            <a href="#"> <img src="../images/logo.png" class="logo"></a>
+            <div class="list">
+                <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">博雅游戏</a></li>
+                <li><a href="#">博雅新闻</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">客服中心</a></li>
+                <li><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+            <div class="align"><a href="">加入我们</a></div>
+            <div class="ce">
+                <a href="#">中文</a>
+                <a href="#">EN</a>
+            </div>
+        </div>
+        <div class="top_two">
+            <div class="banner">
+                <div class="top_two_box">
+                    <div class="online_one"><a href="#">在线游戏</a></div>
+                    <div class="online_two">
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="adv"><p>风靡国内外的斗地主游戏，超低流量，玩法多样，居家旅行必备良品</p></div>
+                <div class="download"><div></div><p>下载游戏：</p></div>
+                <div class="download_add">
+                    <ul>
+                        <li><div></div><a href="#">iPad</a></li>
+                        <li><div></div><a href="#">iPhone</a></li>
+                        <li><div></div><a href="#">Android</a></li>
+                        <li><div></div><a href="#">TV</a></li>
+                        <li><div></div></li>
+                    </ul>
+                </div>
+                <div class="dot">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid">
+        <div class="mid_one">
+            <ul>
+                <li><a href="#"><img src="../images/bd1.jpg"><br>博雅互动宣传视频
+                    <br><span>点击播放</span></a><div></div></li>
+                <li><a href="#"><img src="../images/bd2.jpg"><br>BPT宣传视频
+                    <br><span>点击播放</span></a><div></div></li>
+                <li><a href="#"><img src="../images/bd3.jpg"><br>麻将全集
+                    <br><span>MAHJONG GAMES</span></a><div></div></li>
+                <li><a href="#"><img src="../images/bd4.jpg"><br>中国象棋
+                    <br><span>FOUR LANDLORDS</span></a><div></div></li>
+            </ul>
+            <div class="both"></div>
+            <div class="mid_dot">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="both"></div>
+
+        <div class="mid_two">
+            <div class="mid_bottom">
+                <div class="mid_bottom_left">
+                    <div class="more_one"><a href="#">MORE <span>+</span></a></div>
+                    <div class="mid_list_one">
+                        <ul>
+                            <li><span>11/22</span><a href="">博雅互动公布2018年第三季度业绩，善用成本费用控制政策，在考验中做好防守</a></li>
+                            <li><span>11/22</span><a href="">博雅互动公布2018年第三季度业绩，成本费用控制良好，股权投资收益增加，积极打造高质量的游戏及赛事产品</a></li>
+                            <li><span>09/25</span><a href="">博雅互动义工队中秋探访敬老院，带关爱走进夕阳生活</a></li>
+                            <li><span>08/23</span><a href="">博雅互动公布2018年中期业绩，巩固现有市场地位，加大力度拓展海外市场及其他棋牌游戏业务</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mid_bottom_right">
+                    <div class="jobs">
+                        <h2>社会招聘</h2>
+                        <p>BOYAA JOBS</p>
+                    </div>
+                    <div class="more_two"><a href="#">MORE <span>+</span></a></div>
+                    <div class="mid_list_two">
+                        <p>社会招聘岗位：</p>
+                        <ul>
+                            <li><a href="#">PHP开发工程师</a></li>
+                            <li><a href="#">C++开发工程师</a></li>
+                            <li><a href="#">LUA开发工程师</a></li>
+                            <li><a href="#">大数据开发工程师</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="bottom_all">
+            <div class="bottom_list">
+                <ul>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">免责声明</a> </li>
+                    <li><a href="#">监督举报</a></li>
+                </ul>
+            </div>
+            <p class="boyaa">Copyright © 2004 - 2019 博雅互动(Boyaa Interactive)<a href="">粤ICP备05062536号</a></p>
+            <div class="permit"><p>网络文化经营许可证：粤网文[2015]1991-405号 | 互联网出版许可证：新出网证（粤）字062号 | 增值电信业务经营许可证：粤B2-20110513</p><a href=""><img src="../images/govIcon.gif"></a></div>
+        </div>
+    </div>
+</body>
+</html>
